@@ -18,11 +18,12 @@ public class JoinQuitLISTENER implements Listener {
         e.setJoinMessage(null);
         p.getInventory().clear();
         p.getInventory().setArmorContents(null);
-        Location spawn = new Location(Bukkit.getWorld("Lobby"), 3D, 5D, 2D);
+        Location spawn = new Location(Bukkit.getWorld("hub"), 85.5D, 136D, 3.5D);
         p.getInventory().setItem(3, Utils.createItem(Material.CHEST, 1, 0, "§6§lGadgets"));
         p.getInventory().setItem(4, Utils.createItem(Material.COMPASS, 1, 0, "§b§lNavigator"));
         p.getInventory().setItem(5, Utils.createItem(Material.BLAZE_ROD, 1, 0, "§6§lPlayerhider"));
         p.getInventory().setItem(8, Utils.createItem(Material.REDSTONE, 1, 0, "§6§lProfil"));
+        p.teleport(spawn);
     }
 
     @EventHandler
