@@ -24,12 +24,16 @@ public class JoinQuitLISTENER implements Listener {
         p.getInventory().setItem(5, Utils.createItem(Material.BLAZE_ROD, 1, 0, "§6§lPlayerhider"));
         p.getInventory().setItem(8, Utils.createItem(Material.REDSTONE, 1, 0, "§6§lProfil"));
         p.teleport(spawn);
+        if(p.hasPermission("Rank.Owner")){
+            e.setJoinMessage("§8[§a+§8] §4§lOwner " + p.getDisplayName());
+        }
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e){
         Player p =e.getPlayer();
         e.setQuitMessage(null);
+        if(p.hasPermission("§8[§c-§8] §4§lOwner " + p.getDisplayName()));
     }
 
 }
