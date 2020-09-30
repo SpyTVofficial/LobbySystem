@@ -33,7 +33,9 @@ public class JoinQuitLISTENER implements Listener {
     public void onQuit(PlayerQuitEvent e){
         Player p =e.getPlayer();
         e.setQuitMessage(null);
-        if(p.hasPermission("§8[§c-§8] §4§lOwner " + p.getDisplayName()));
+        if(p.hasPermission("Rank.Owner")){
+            e.setQuitMessage("§8[§c-§8] §4§lOwner " + p.getDisplayName());
+        }
     }
 
 }

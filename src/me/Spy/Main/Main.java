@@ -3,6 +3,7 @@ package me.Spy.Main;
 import me.Spy.Gadgets.Enterhaken;
 import me.Spy.Gadgets.JumpPads;
 import me.Spy.Inventorys.Gadgets;
+import me.Spy.Inventorys.PlayerHider;
 import me.Spy.Inventorys.Profile;
 import me.Spy.Listener.JoinQuitLISTENER;
 import org.bukkit.Bukkit;
@@ -21,6 +22,7 @@ public class Main extends JavaPlugin {
 
         //Inventorys
         Bukkit.getPluginManager().registerEvents(new Gadgets(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerHider(), this);
         Bukkit.getPluginManager().registerEvents(new Profile(), this);
 
         //Gadgets
