@@ -25,7 +25,11 @@ public class Profile implements Listener {
             Inv.setItem(51, Utils.createItem(Material.EMERALD, 1, 0, "§aAnfragen"));
             Inv.setItem(52, Utils.createItem(Material.REDSTONE, 1, 0, "§aAktive Freunde"));
             Inv.setItem(53, Utils.createItem(Material.BARRIER, 1, 0, "BLANK"));
-            p.openInventory(Inv);
+            if(p.isOp()) {
+                p.openInventory(Inv);
+            } else {
+                p.sendMessage("§cDieses Feature ist noch in der Entwicklung!");
+            }
         }
     }
 
