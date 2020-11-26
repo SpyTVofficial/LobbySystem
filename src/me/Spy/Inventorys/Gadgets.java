@@ -44,6 +44,7 @@ public class Gadgets implements Listener {
         Inv.setItem(22, Utils.createItem(Material.FISHING_ROD, 1, 0, "§5§lEnterhaken"));
         Inv.setItem(23, Utils.createItem(Material.FEATHER, 1, 0, "§b§lFliegen"));
         Inv.setItem(21, Utils.createItem(Material.IRON_PLATE, 1, 0, "§a§lJumpPads"));
+        Inv.setItem(40, Utils.createItem(Material.BARRIER, 1, 0, "§cInventar schließen"));
 
         p.openInventory(Inv);
     }
@@ -53,7 +54,9 @@ public class Gadgets implements Listener {
         Player p = null;
         if (e.getWhoClicked() instanceof Player)
             p = (Player)e.getWhoClicked();
-        if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§5§lEnterhaken")) {
+        if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§cInventar schließen")) {
+            p.getOpenInventory().close();
+        } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§5§lEnterhaken")) {
             if(eh.contains(p)){
                 p.sendMessage(Utils.prefix + "§5Enterhaken §cdeaktiviert");
                 eh.remove(p);

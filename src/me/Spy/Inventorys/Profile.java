@@ -25,6 +25,7 @@ public class Profile implements Listener {
             Inv.setItem(51, Utils.createItem(Material.EMERALD, 1, 0, "§aAnfragen"));
             Inv.setItem(52, Utils.createItem(Material.REDSTONE, 1, 0, "§aAktive Freunde"));
             Inv.setItem(53, Utils.createItem(Material.BARRIER, 1, 0, "BLANK"));
+            Inv.setItem(40, Utils.createItem(Material.BARRIER, 1, 0, "§cInventar schließen"));
             if(p.isOp()) {
                 p.openInventory(Inv);
             } else {
@@ -42,6 +43,9 @@ public class Profile implements Listener {
 
 
             e.setCancelled(true);
+        }
+        if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§cInventar schließen")) {
+            p.getOpenInventory().close();
         }
 
     }

@@ -35,10 +35,10 @@ public class Navigator implements Listener {
             Inv.setItem(37, Utils.createItem(Material.STAINED_GLASS_PANE, 1, 14, " "));
             Inv.setItem(43, Utils.createItem(Material.STAINED_GLASS_PANE, 1, 14, " "));
             Inv.setItem(44, Utils.createItem(Material.STAINED_GLASS_PANE, 1, 14, " "));
-            Inv.setItem(22, Utils.createItem(Material.FISHING_ROD, 1, 0, "§5§lEnterhaken"));
-            Inv.setItem(23, Utils.createItem(Material.FEATHER, 1, 0, "§b§lFliegen"));
-            Inv.setItem(21, Utils.createItem(Material.IRON_PLATE, 1, 0, "§a§lJumpPads"));
-
+            Inv.setItem(22, Utils.createItem(Material.IRON_PICKAXE, 1, 0, "§bCityBuild"));
+            Inv.setItem(23, Utils.createItem(Material.GOLDEN_APPLE, 1, 0, "§6Spawn"));
+            Inv.setItem(21, Utils.createItem(Material.IRON_SWORD, 1, 0, "§aSpysAndCrims"));
+            Inv.setItem(40, Utils.createItem(Material.BARRIER, 1, 0, "§cInventar schließen"));
             p.openInventory(Inv);
         }
     }
@@ -52,5 +52,8 @@ public class Navigator implements Listener {
 
         e.setCancelled(true);
     }
+        if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§cInventar schließen")) {
+            p.getOpenInventory().close();
+        }
 
 }}
